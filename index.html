@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="بحث متقدم في فيديوهات YouTube وShorts مع فلاتر ومصغرات وترقيم صفحات" />
+  <title>TubeFind — بحث YouTube وShorts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar shell"><a class="brand" href="#top"><span class="brand-mark"><span></span><span></span><span></span></span><span>Tube<span>Find</span></span></a><div class="topbar-meta"><span class="live-dot"></span> بحث YouTube محلي</div></header>
+
+  <main id="top" class="shell page">
+    <section class="hero"><div class="eyebrow"><span>01</span> مستكشف الفيديو</div><h1>اعثر على ما<br><em>تريد مشاهدته.</em></h1><p>ابحث في فيديوهات YouTube وShorts، صفِّ النتائج حسب النوع والتاريخ والمدة، واستعرضها في بطاقات مصغرة مرتبة.</p></section>
+
+    <section class="api-card glass-card"><div class="api-top"><div><div class="section-kicker">بحث بدون مفتاح</div><h2>ابدأ بكلمة أو موضوع</h2></div><span class="free-badge">مفتوح</span></div><p class="api-hint no-key-note">لا تحتاج الصفحة إلى YouTube Data API Key. يتم جلب النتائج من مصدر بحث عام، وقد يختلف توفره حسب الشبكة.</p></section>
+
+    <section class="search-card glass-card">
+      <div class="search-row"><label class="search-box"><span>⌕</span><input id="query" type="search" placeholder="ابحث عن فيديو، قناة، موضوع..." autocomplete="off"/><button id="clearQuery" type="button" aria-label="مسح البحث">×</button></label><button id="searchBtn" class="primary-btn" type="button"><span>بحث</span><b>↗</b></button></div>
+      <div class="filters">
+        <div class="filter-group"><label for="typeFilter">نوع المحتوى</label><select id="typeFilter"><option value="all">أي فيديو</option><option value="shorts">Shorts فقط</option><option value="video">فيديو عادي</option></select></div>
+        <div class="filter-group"><label for="dateFilter">تاريخ النشر</label><select id="dateFilter"><option value="all">في أي وقت</option><option value="hour">آخر ساعة</option><option value="today">اليوم</option><option value="week">هذا الأسبوع</option><option value="month">هذا الشهر</option><option value="year">هذه السنة</option></select></div>
+        <div class="filter-group"><label for="durationFilter">المدة الزمنية</label><select id="durationFilter"><option value="all">أي مدة</option><option value="short">أقل من 4 دقائق</option><option value="medium">من 4 إلى 20 دقيقة</option><option value="long">أكثر من 20 دقيقة</option></select></div>
+        <div class="filter-group"><label for="sortFilter">ترتيب النتائج</label><select id="sortFilter"><option value="relevance">الأكثر صلة</option><option value="date">الأحدث أولاً</option><option value="viewCount">الأكثر مشاهدة</option><option value="rating">الأعلى تقييماً</option></select></div>
+      </div>
+    </section>
+
+    <section class="results-head"><div><div class="eyebrow"><span>02</span> النتائج</div><h2 id="resultsTitle">آخر ما بحثت عنه</h2></div><div id="resultMeta" class="result-meta"></div></section>
+    <div id="message" class="message-panel"><div class="message-icon">⌕</div><strong>اكتب كلمة البحث للبدء</strong><span>ستظهر النتائج هنا على شكل بطاقات مصغرة.</span></div>
+    <section id="resultsGrid" class="results-grid" aria-live="polite"></section>
+    <nav id="pagination" class="pagination" aria-label="ترقيم صفحات النتائج"></nav>
+  </main>
+  <footer class="shell footer"><span>TubeFind</span><span>بحث عام بدون مفتاح · يعمل من متصفحك</span></footer><div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
